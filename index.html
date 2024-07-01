@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>souled Store</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e31e24;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icons span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+
+   
+
+.posters img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.breadcrumb p {
+    margin: 0;
+    padding-left:120px;
+    padding-bottom:50px;
+    font-size: 14px;
+    color: #777;
+}
+
+.filter {
+    width: 20%;
+    padding-right: 50px;
+}
+
+.filter h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-right: 50px;
+}
+
+.filter input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.filter ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  
+}
+
+.filter ul li input {
+    margin-right: 10px;
+}
+
+.filter ul li a {
+    text-decoration: none;
+    color: #e31e24;
+}
+
+.products {
+    width: 80%;
+}
+
+.sorting {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.sorting label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.sorting select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    width: calc(25% - 10px);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #777;
+}
+.blog-section {
+	margin-bottom: 2rem;
+}
+
+.card-container {
+	display: flex;
+	justify-content: space-between;
+    
+    
+}
+
+.card {
+	background-color: #fff;
+	padding:10px;
+	margin-right: 2rem;
+	width: calc(33.33% - 2rem);
+    border:10px;
+}
+
+.card h3 {
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.card p {
+	margin-bottom: 2rem;
+}
+.card img {
+    width:375px;
+}
+footer {
+    background-color: #fff;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contact-us h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    
+}
+
+.contact-form {
+    display: flex;
+    width: 100%;
+  padding:20px;
+}
+
+.form-section, .contact-info {
+    width: 50%;
+  padding:30px;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+  
+}
+
+form label {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #e31e24;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #d11d22;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #e31e24;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+}
+
+.footer-bottom img {
+    height: 40px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    height: 24px;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">Grid.</div>
+        <nav>
+            <ul>
+                <li>SUMMER'24 <sup style="color: red;"> NEW</sup> </li>
+                <li style="color: red;">TOPWEAR</li>
+                <li>BOTTOMWEAR</li>
+                <li>SHOES & ACCESSORIES</li>
+                <li>RESTOCKED</li>
+                <li>THEMES</li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <span>login</span>
+            <span>❤️</span>
+            <span>🛒</span>
+        </div>
+    </header>
+
+    <section >
+        <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage_Banner__1_ycCzHWB.jpg?format=webp&w=1500&dpr=1.3" alt="image">
+    </section>
+
+    <main> 
+      
+        <div class="breadcrumb">
+            <p>Home / The Souled Store / Restocked Womenswear</p>
+        </div>
+
+        <aside class="filter">
+            <div>
+            <h2>PRODUCTS</h2>
+            <input type="text" placeholder="Search for Products">
+            <ul>
+                <li><input type="checkbox"> Women Boyfriend Shirts</li>
+                <li><input type="checkbox"> Women Bralette</li>
+                <li><input type="checkbox"> Women Cargo Jeans</li>
+                <li><input type="checkbox"> Women Cargo Joggers</li>
+                <li><input type="checkbox"> Women Cropped Tops</li>
+                <li><input type="checkbox"> Women Denim Jackets</li>
+                <li><input type="checkbox"> Women Jeans</li>
+                <li><input type="checkbox"> Women Joggers</li>
+                <li><input type="checkbox"> Women Oversized Cropped T-Shirts</li>
+                <li><input type="checkbox"> Women Oversized Shirt Dresses</li>
+                <li><a href="#">+6 MORE</a></li>
+            </ul>
+        </div>
+        </aside>
+    
+        <section class="products">
+            <div class="sorting">
+                <label for="sort">Select Sorting Options</label>
+                <select id="sort">
+                    <option value="newest">Newest</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Top_Selling_1_NMLfg9W.jpg?format=webp&w=360&dpr=1.3" alt="White Bralette Top">
+                    <h3>White Bralette Top</h3>
+                    <p>Women Bralette</p>
+                    <p>₹ 699 MRP incl. of all taxes</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Top_Selling_6_IzbGAzQ.jpg?format=webp&w=360&dpr=1.3" alt="Cotton Linen: Lavender">
+                    <h3>Cotton Linen: Lavender</h3>
+                    <p>Women Boyfriend Shirts</p>
+                    <p>₹ 1399 MRP incl. of all taxes</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Top_Selling_4_eVE7L7G.jpg?format=webp&w=360&dpr=1.3" alt="Korean Pants: Camel">
+                    <h3>Korean Pants: Camel</h3>
+                    <p>Women Pants</p>
+                    <p>₹ 1999 MRP incl. of all taxes</p>
+                </div>
+                
+            </div>
+
+        </section>
+       
+        
+    
+    </main>
+    <main>
+        <div>
+            <section class="blog-section">
+                <h2>Fresh from the Blog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#777"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="https://i.etsystatic.com/inv/0fa079/6133229703/inv_620x495.6133229703_97i1qzqq.jpg?version=0" alt="cardimage">
+                        
+                        <p>Shopping Guides
+
+                           <h4> 9 Comfy Throws for Cosy Autumn Vibes</h4>
+                            
+                            Embrace the snuggling season with stylish throws that will warm your hearts</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://i.etsystatic.com/inv/b442d9/6117514577/inv_425x340.6117514577_r3vu63hi.jpg?version=0" alt="imagecard2">
+                        <p>Shopping Guides
+
+                            <h4>14 Beautiful Bags That Express Your Unique Style</h4>
+                            
+                            Amp up your fashion game with bags that perfectly match your aesthetic</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://i.etsystatic.com/inv/80afce/6067059588/inv_425x340.6067059588_tarwcuje.jpg?version=0" alt="image card3">
+                        <p>he Best Gift Ideas for Kids of All Ages</p>
+                        
+
+                            <h5>Shop the sweetest surprises for all little ones in your family-these gifts for kids will definitely earn you some brownie points.</h5>
+                    </div>
+                </div>
+            </section>
+            
+            
+        </div>
+    </main>
+    <footer>
+        <footer>
+            <div class="contact-us">
+                <h2>CONTACT US</h2>
+                <div class="contact-form">
+                    <div class="form-section">
+                        <h3>CONTACT INFORMATION</h3>
+                        <form>
+                            <label for="name">Name <span>*</span></label>
+                            <input type="text" id="name" name="name" required>
+    
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required>
+    
+                            <label for="telephone">Telephone</label>
+                            <input type="tel" id="telephone" name="telephone">
+    
+                            <label for="comment">Comment <span>*</span></label>
+                            <textarea id="comment" name="comment" required></textarea>
+    
+                            <button type="submit">SUBMIT</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <p>We at Sunflame rejoice every opportunity which helps us to keep in touch with our customers. So, you can reach us as per your convenience by phone, email or through personal visit to our office.</p>
+                        <p><strong>Sunflame Enterprises Private Limited</strong></p>
+                        <p>58, Sector 27C, Mathura Road, Faridabad - 121 003, Haryana, India</p>
+                        <p><strong>+91-129-4266999</strong></p>
+                        <p>FOR ANY SALES RELATED ENQUIRY PLEASE MAIL US ON:</p>
+                        <p><a href="mailto:enquiry@sunflame.com">enquiry@sunflame.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="https://www.thesouledstore.com/static/img/newlogo.8dcc6cc.png" alt="The Souled Store Logo">
+                <p>© The Souled Store 2024-25</p>
+                <div class="social-icons">
+                    <a href="#"><img src="https://img.icons8.com/?size=24&id=WI60cLQ7XN0Q&format=png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/?size=24&id=J6CpXwXjvIhl&format=png" alt="Instagram"></a>
+                    <a href="#"><img src="https://img.icons8.com/?size=48&id=uiC43lDJPIAF&format=png" alt="Twitter"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
+    </footer>
+</body>
+</html>
